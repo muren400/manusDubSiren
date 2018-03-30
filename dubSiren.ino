@@ -11,7 +11,7 @@
 ***********************************************************************
 */
 
-/*#define LEDOUT 10
+#define LEDOUT 10
 #define RATEIN 0
 #define PITCHIN 1
 #define INTIN 2
@@ -95,67 +95,4 @@ void loop(){
 
 	//wait for a little bit, then go on to the next step
 	delay(rate);
-}*/
-
-
-int duration = 5000;
-int position = 0;
-byte direct = 255;
-
-void setup() {                
-  pinMode(4, OUTPUT);     
-  pinMode(7, OUTPUT);
-  pinMode(13, OUTPUT);
-  digitalWrite(4, 0);
-  digitalWrite(7, LOW);
-}
-
-void loop() {
-  /*digitalWrite(7, HIGH);
-  digitalWrite(13, HIGH);
-	delay(1);          
-  
-  digitalWrite(7, LOW); 
-  digitalWrite(13, LOW);*/
-  //delay(1);      
-
-  position++;
-
-  tone(7, 440);
-  delay(400);
-  digitalWrite(4, 0);
-  tone(7, 880);
-  delay(200);
-  digitalWrite(4, 1);
-  tone(7, 392);
-  delay(400);
-  digitalWrite(4, 0);
-  tone(7, 784);
-  delay(200);
-  digitalWrite(4, 1);
-  tone(7, 523);
-  delay(400);
-  digitalWrite(4, 0);
-  tone(7, 1047);
-  delay(200);
-  digitalWrite(4, 1);
-  tone(7, 392);
-  delay(400);
-  digitalWrite(4, 0);
-  tone(7, 784);
-  delay(200);
-  digitalWrite(4, 1);
-  /*if(position == duration){
-  	if(direct == 0){
-  		direct = 1;
-  		tone(7, 400, 200);
-  	}
-  	else{
-  		direct = 0;
-  		tone(7, 800, 400);
-  	}
-  	digitalWrite(4, direct);
-  position = 0;
-  }*/
-
 }
